@@ -1,0 +1,7 @@
+unidecode
+nltk
+autocorrect
+bs4
+pandas
+numpy
+tqdm
