@@ -8,10 +8,9 @@ https://github.com/tariqjamil-bwp/pypi_projects/tree/main/tj_nlp
 pip install tj_preproc
 
 **Usage:** (by example)
-from tj_text.tj_preproc import text_preprocessing_ds, text_preprocessing
-
-df2 = df1.copy()
-df2['input_data'] = text_preprocessing_ds(df2['Phrase'])
+* from tj_text.tj_preproc import text_preprocessing_ds, text_preprocessing
+* df2 = df1.copy()
+* df2['input_data'] = text_preprocessing_ds(df2['Phrase'])
 
 *Note:* It will not work with .apply(text_....) method, as .apply is item by item processing which may not be optimized at dataframe level.
 
