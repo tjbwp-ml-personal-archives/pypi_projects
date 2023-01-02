@@ -13,22 +13,24 @@ from tj_text.tj_preproc import text_preprocessing_ds, text_preprocessing
 df2 = df1.copy()
 df2['input_data'] = text_preprocessing_ds(df2['Phrase'])
 
-**Note:** It will not work with .apply(text_....) method, as .apply is item by item processing which may not be optimized at dataframe level.
+*Note:* It will not work with .apply(text_....) method, as .apply is item by item processing which may not be optimized at dataframe level.
 
 
 **Details**:
+
+**text_preprocessing_ds(pdSeries)**
 It has a variety of input flags, controlling the appropritae text preprocessing activity, and are by default set to True.
 The details of flags is as under:
 
 ** The function is optimized to take advantage of the multi threaded processors **
 
 **Arguments:**
-1. pdSeries: A positional argument, of pandas series object type, and should contain text phrases to be preprocessed
+1. *pdSeries*: A positional argument, of pandas series object type, and should contain text phrases to be preprocessed
 
     
 ** All following arguments are key-word type ** 
 
- 2. NewLine removal:
+ 2. *NewLine removal*:
     Parameter: 'newlines_tabs'
     This setting when enablesd causes the function to remove all the occurrences of newlines, tabs, and combinations like: \\n, \\.
     
@@ -37,7 +39,7 @@ The details of flags is as under:
     Output : This is her first day at this place. Please, Be nice to her. 
     
 
-3. HTML Tags
+3. *HTML Tags removal*:
     Parameter: 'remove_html'
     This setting when enablesd causes the function to remove all the occurrences of html tags from the text.
     
@@ -46,7 +48,7 @@ The details of flags is as under:
     Output : This is a nice place to live.  
     
 
-4. Hyper Links removal
+4. *Hyper Links removal*:
     This setting when enablesd causes the function to remove all the occurrences of links.
     Parameter: 'links'
 
@@ -55,7 +57,7 @@ The details of flags is as under:
     Output : To know more about cats and food & website: visit:     
     
 
-5. Removing extra white spaces
+5. *Removing extra white spaces:*
     Parameter: 'extra_whitespace' 
     This setting when enablesd causes the function to remove extra whitespaces from the text
         
@@ -64,7 +66,7 @@ The details of flags is as under:
     Output : How are you doing ?     
 
     
-6. Accented Characters Removal:
+6. *Accented Characters Removal*:
     Parameter: 'accented_chars' 
     This setting when enablesd causes the function to remove accented characters from the text contained within the Dataset.
                
@@ -73,7 +75,7 @@ The details of flags is as under:
     Output : Malaga, aeeohello    
 
 
-7. Lower Casing
+7. *Lower Casing*:
     Parameter: 'lowercase'
     This setting when enablesd causes the function to convert text into lower case.
              
@@ -82,7 +84,7 @@ The details of flags is as under:
     Output : the world is full of surprises!
     
 
-8. Removing Character Repetitions:
+8. *Removing Character Repetitions*:
     Parameter: 'repeatition'
     This setting when enablesd causes the function to reduce repeatition to two characters for alphabets and to one character for punctuations.
             
@@ -91,7 +93,7 @@ The details of flags is as under:
     Output : Reallyy, Greeaatt !?.;:)
     
     
-9. Expand Contractions:
+9. *Expand Contractions*:
     Parameter: 'contractions'
     This setting when enablesd causes the function to expand shortened words to the actual form.
        e.g. don't to do not
@@ -101,16 +103,16 @@ The details of flags is as under:
        Output :  is not, are not, cannot, because, cannot have 
 
 
-10. Removing Special Characters
+10. *Removing Special Characters*:
     Parameter: 'special_chars'
-    This setting when enablesd causes the function to remove all the special characters except a preset list of characters as they have imp meaning in the text provided.
+    This setting when enablesd causes the function to remove all the special characters except a preset list of characters as they have imp meaning in  the text provided.
        
     Example: 
     Input : Hello, T-a-r-i-q. Thi*s is $100.05 : the payment that you will recieve! (Is this okay?) 
     Output :  Hello, Tariq. This is $100.05 : the payment that you will recieve! Is this okay?
        
 
-11. Removong Stop Words
+11. *Removong Stop Words*:
     Parameter: 'stop_words'
     This setting when enablesd causes the function to remove the stopwords which doesn't add much meaning to a sentence 
     & they can be remove safely without comprimising meaning of the sentence.
@@ -120,7 +122,7 @@ The details of flags is as under:
     Output : ["'This", 'Tariq', 'karachi', 'came', 'study', '.', "'"] 
 
 
-12. Mis-spelled words Correction:
+12. *Mis-spelled words Correction*:
     Parameter: 'mis_spell'
     This setting when enablesd causes the function to correct spellings. Currently only English language is supported.
  
@@ -129,10 +131,16 @@ The details of flags is as under:
     Output : This is Akbar from London who came here to study.
       
 
-13. Lamentization:
+13. *Lamentization*:
     Parameters: 'lemmatization_allow'
     This setting when enablesd causes the function to converts word to their root words without explicitely cut down as done in stemming.
             
     Example: 
     Input : text reduced 
     Output :  text reduce
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+The unoptimized function also made part of the package for comparison purposes **text_preprocessing(text)**
+It accepts text string as parameter and therefore requires .apply method to operate or looping if needs selective preprocessing.
+It accepts same other (2-13) parameters as above.
