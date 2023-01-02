@@ -5,7 +5,7 @@ https://github.com/tariqjamil-bwp/pypi_projects/tree/main/tj_nlp
 
 
 **Installing:**
-pip install -i https://test.pypi.org/simple/ tj-preproc
+pip install tj_preproc
 
 **Usage:** (by example)
 from tj_text.tj_preproc import text_preprocessing_ds, text_preprocessing
