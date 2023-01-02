@@ -34,63 +34,63 @@ The details of flags is as under:
     Parameter: 'newlines_tabs'
     This setting when enablesd causes the function to remove all the occurrences of newlines, tabs, and combinations like: \\n, \\.
     
-    Example:
-    Input : This is her \\ first day at this place.\n Please,\t Be nice to her.\\n
-    Output : This is her first day at this place. Please, Be nice to her. 
+    * Example:
+      * Input : This is her \\ first day at this place.\n Please,\t Be nice to her.\\n
+      * Output : This is her first day at this place. Please, Be nice to her. 
     
 
 3. *HTML Tags removal*:
     Parameter: 'remove_html'
     This setting when enablesd causes the function to remove all the occurrences of html tags from the text.
     
-    Example:
-    Input : This is a nice place to live. 
-    Output : This is a nice place to live.  
+    * Example:
+      * Input : This is a nice place to live. 
+      * Output : This is a nice place to live.  
     
 
 4. *Hyper Links removal*:
     This setting when enablesd causes the function to remove all the occurrences of links.
     Parameter: 'links'
 
-    Example:
-    Input : To know more about cats and food & website: catster.com  visit: https://catster.com//how-to-feed-cats
-    Output : To know more about cats and food & website: visit:     
+    * Example:
+      * Input : To know more about cats and food & website: catster.com  visit: https://catster.com//how-to-feed-cats
+      * Output : To know more about cats and food & website: visit:     
     
 
 5. *Removing extra white spaces:*
     Parameter: 'extra_whitespace' 
     This setting when enablesd causes the function to remove extra whitespaces from the text
         
-    Example:
-    Input : How   are   you   doing   ?
-    Output : How are you doing ?     
+    * Example:
+      * Input : How   are   you   doing   ?
+      * Output : How are you doing ?     
 
     
 6. *Accented Characters Removal*:
     Parameter: 'accented_chars' 
     This setting when enablesd causes the function to remove accented characters from the text contained within the Dataset.
                
-    Example:
-    Input : Málaga, àéêöhello
-    Output : Malaga, aeeohello    
+    * Example:
+      * Input : Málaga, àéêöhello
+      * Output : Malaga, aeeohello    
 
 
 7. *Lower Casing*:
     Parameter: 'lowercase'
     This setting when enablesd causes the function to convert text into lower case.
              
-    Example:
-    Input : The World is Full of Surprises!
-    Output : the world is full of surprises!
+    * Example:
+      * Input : The World is Full of Surprises!
+      * Output : the world is full of surprises!
     
 
 8. *Removing Character Repetitions*:
     Parameter: 'repeatition'
     This setting when enablesd causes the function to reduce repeatition to two characters for alphabets and to one character for punctuations.
             
-    Example:
-    Input : Realllllllllyyyyy,        Greeeeaaaatttt   !!!!?....;;;;:)
-    Output : Reallyy, Greeaatt !?.;:)
+    * Example:
+      * Input : Realllllllllyyyyy,        Greeeeaaaatttt   !!!!?....;;;;:)
+      * Output : Reallyy, Greeaatt !?.;:)
     
     
 9. *Expand Contractions*:
@@ -98,18 +98,18 @@ The details of flags is as under:
     This setting when enablesd causes the function to expand shortened words to the actual form.
        e.g. don't to do not
     
-       Example: 
-       Input : ain't, aren't, can't, cause, can't've
-       Output :  is not, are not, cannot, because, cannot have 
+     * Example: 
+       * Input : ain't, aren't, can't, cause, can't've
+       * Output :  is not, are not, cannot, because, cannot have 
 
 
 10. *Removing Special Characters*:
     Parameter: 'special_chars'
     This setting when enablesd causes the function to remove all the special characters except a preset list of characters as they have imp meaning in  the text provided.
        
-    Example: 
-    Input : Hello, T-a-r-i-q. Thi*s is $100.05 : the payment that you will recieve! (Is this okay?) 
-    Output :  Hello, Tariq. This is $100.05 : the payment that you will recieve! Is this okay?
+    * Example: 
+      * Input : Hello, T-a-r-i-q. Thi*s is $100.05 : the payment that you will recieve! (Is this okay?) 
+      * Output :  Hello, Tariq. This is $100.05 : the payment that you will recieve! Is this okay?
        
 
 11. *Removong Stop Words*:
@@ -117,30 +117,30 @@ The details of flags is as under:
     This setting when enablesd causes the function to remove the stopwords which doesn't add much meaning to a sentence 
     & they can be remove safely without comprimising meaning of the sentence.
             
-    Example: 
-    Input : This is Tariq from karachi who came here to study.
-    Output : ["'This", 'Tariq', 'karachi', 'came', 'study', '.', "'"] 
+    * Example: 
+      * Input : This is Tariq from karachi who came here to study.
+      * Output : ["'This", 'Tariq', 'karachi', 'came', 'study', '.', "'"] 
 
 
 12. *Mis-spelled words Correction*:
     Parameter: 'mis_spell'
     This setting when enablesd causes the function to correct spellings. Currently only English language is supported.
  
-    Example: 
-    Input : This is OAkbar from Londn who came heree to studdy.
-    Output : This is Akbar from London who came here to study.
+    * Example: 
+      * Input : This is OAkbar from Londn who came heree to studdy.
+      * Output : This is Akbar from London who came here to study.
       
 
 13. *Lamentization*:
     Parameters: 'lemmatization_allow'
     This setting when enablesd causes the function to converts word to their root words without explicitely cut down as done in stemming.
             
-    Example: 
-    Input : text reduced 
-    Output :  text reduce
+    * Example: 
+      * Input : text reduced 
+      * Output :  text reduce
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
-The unoptimized function also made part of the package for comparison purposes **text_preprocessing(text)**
+**The unoptimized function also made part of the package for comparison purposes **text_preprocessing(text)**
 It accepts text string as parameter and therefore requires .apply method to operate or looping if needs selective preprocessing.
 It accepts same other (2-13) parameters as above.
